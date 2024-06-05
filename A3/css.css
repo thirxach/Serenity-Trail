@@ -1,0 +1,210 @@
+/* GENERAL */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;  
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+    color: black;
+}
+
+p {
+    color: rgb(85,85,85);
+    font-size: 1.15rem;
+}
+
+a,
+.btn {
+    transition: all 300ms ease;
+}
+
+
+/* Nav */
+
+nav, 
+.nav  {
+    display: flex;
+    scroll-behavior: smooth;
+}
+
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh; 
+}
+
+.nav {
+    gap: 10rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+a {
+    color: green;
+    text-decoration: none;
+    text-decoration-color: green;
+    font-size: 30px;
+    
+}
+
+a:hover {
+    color: black;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    opacity: 1;
+}
+
+hr {
+    position: relative;
+    top: -5px;
+    border: none;
+    height: 12px;
+    background: green;
+    margin-bottom: -10px;
+}
+
+#HomePageProfile
+
+section {
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+#profile {
+    display: flex;
+    justify-content: center;
+    gap: 20rem;
+    height: 90vh;
+}
+
+.section_picture {
+    display: flex;
+    height: 750px;
+    margin: auto;
+}
+
+
+
+
+.text_p1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.overlay-text {
+    margin-top: 5rem;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: #fff; 
+    padding: 10px 20px; 
+    font-size: 80px; 
+    text-align: center;
+}
+
+.overlay-text1 {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: #fff; 
+    font-size: 35px; 
+    text-align: center;
+    margin-top: 12rem;
+}
+
+.one {
+    background-color: red;
+    text-align: center;
+    height:calc(25% - 20px);
+    color: white;
+    
+    
+} 
+
+.two{
+    background-color: yellow;
+    text-align: center;
+    height:calc(25% - 20px);
+}
+
+.three {
+    background-color: green;
+    text-align: center;
+    height:calc(25% - 20px);
+}
+
+.four {
+    background-color: grey;
+    text-align: center;
+    height: calc(20% - 20px)
+}
+
+
+
+
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    padding: 2vm 4vm;
+    width:90%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+form h1{
+    color: black;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+form input, form textarea{
+    border:0;
+    margin:10px;
+    padding: 20px;
+    outline: none;
+    background:#f5f5f5;
+    font-size: 15px;
+}
+
+form button{
+    padding:15px;
+    background: black;
+    color: #fff;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    cursor: pointer;   
+}
+
+.contact_info {
+    text-align: center;
+    margin-top: -8%;
+    margin-bottom: 4%;
+}
+
+
