@@ -77,8 +77,11 @@ def delete_messages():
     db.session.commit()
     return jsonify({'message': 'Message deleted'})
 
+
+
 # start the server
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True, host='127.0.0.1', port=5555)
+    app.run(debug=True, host='0.0.0.0', port=5555)
+
