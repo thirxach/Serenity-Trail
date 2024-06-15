@@ -1,26 +1,45 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css.css">
-    <title> A3 </title>
+    <title>Contact Us - A3</title>
 </head>
-
 <body>
-    <nav id="destop-nav">
-        <div class="logo"> </div>
-        <div>
-            <ul class ="nav links">
-                <li><a href="Home.html"><strong>Home</strong></a></li>
-                <li><a href="Trail.html"><strong>Trail</strong></a></li>
-                <li><a href="About.html"><strong>About</strong></a></li>
-                <li><a href="Contact.html"><strong>Contact</strong></a></li>                
-            </ul>
-        </div>
-    </nav>
-    <hr>
+<nav>
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+    <ul class="nav">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Trail.html">Trail</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+    </ul>
+</nav>
+<hr>
 
+<h1 style="text-align: center;">CONTACT US</h1>
+<hr>
 
+<div class="container">
+    <form action="contact.php" method="post" style="width: 90%;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <input type="submit" value="Submit">
+    </form>
 
+    <div class="contact-info">
+        <h2>Our Contact</h2>
+        <p>Phone number: 0218644754</p>
+        <p>Email: <a href="mailto:info@serenity-trail.com">info@serenity-trail.com</a></p>
+        <p>Address: 123 Border Street, Chartwell, Hamilton, New Zealand</p>
+    </div>
+</div>
 </body>
 </html>

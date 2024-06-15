@@ -3,7 +3,7 @@
 
 * {
     margin: 0;
-    padding: 0;  
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -25,7 +25,7 @@ a,
 
 /* Nav */
 
-nav, 
+nav,
 .nav  {
     display: flex;
     scroll-behavior: smooth;
@@ -34,7 +34,7 @@ nav,
 nav {
     justify-content: space-around;
     align-items: center;
-    height: 15vh; 
+    height: 15vh;
 }
 
 .nav {
@@ -48,7 +48,7 @@ a {
     text-decoration: none;
     text-decoration-color: green;
     font-size: 30px;
-    
+
 }
 
 a:hover {
@@ -108,22 +108,22 @@ section {
 .overlay-text {
     margin-top: 5rem;
     position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    color: #fff; 
-    padding: 10px 20px; 
-    font-size: 80px; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 80px;
     text-align: center;
 }
 
 .overlay-text1 {
     position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    color: #fff; 
-    font-size: 35px; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 35px;
     text-align: center;
     margin-top: 12rem;
 }
@@ -133,9 +133,9 @@ section {
     text-align: center;
     height:calc(25% - 20px);
     color: white;
-    
-    
-} 
+
+
+}
 
 .two{
     background-color: yellow;
@@ -155,7 +155,9 @@ section {
     height: calc(20% - 20px)
 }
 
-
+h1 {
+    text-align: center;
+}
 
 
 
@@ -163,15 +165,13 @@ section {
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 form{
     display:flex;
+    text-align: center;
     flex-direction: column;
-    padding: 2vm 4vm;
-    width:90%;
+    width:70%;
     max-width: 600px;
     border-radius: 10px;
 }
@@ -198,13 +198,11 @@ form button{
     font-size: 18px;
     border: 0;
     outline: none;
-    cursor: pointer;   
+    cursor: pointer;
 }
 
 .contact_info {
     text-align: center;
-    margin-top: -8%;
-    margin-bottom: 4%;
 }
 
 
