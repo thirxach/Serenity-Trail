@@ -4,7 +4,7 @@ mkdir /tmp/serenity
 cd /tmp/serenity
 
 # Pull the latest code
-git clone https://github.com/Bend-Function/Serenity-Trail -b web-dev
+git clone https://github.com/thirxach/Serenity-Trail
 cd Serenity-Trail
 
 # Remove the old Docker container
