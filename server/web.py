@@ -2,12 +2,15 @@ from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask import render_template
 
+# Initialize the Flask app
 app = Flask(__name__)
+# Configure the database - SQLite
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 
+# Create a model for the database
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
@@ -38,15 +41,7 @@ def about():
 def contact():
     return render_template('Contact.html')
 
-
-@app.route('/tp', methods=['GET'])
-def get_message():
-    new_message = Message(name='B', email='T', message='233333')
-    db.session.add(new_message)
-    db.session.commit()
-    return jsonify({'message': 'Message stored'}), 201
-
-
+# Create a POST endpoint to store the feedback
 @app.route('/feedback', methods=['POST'])
 def post_message():
     data = request.get_json()
@@ -55,7 +50,7 @@ def post_message():
     db.session.commit()
     return jsonify({'message': 'Message stored'}), 201
 
-
+# Create a GET endpoint to retrieve the feedback
 @app.route('/feedback', methods=['GET'])
 def get_messages():
     messages = Message.query.all()
@@ -66,13 +61,14 @@ def get_messages():
         output.append(message_data)
     return jsonify(output)
 
-
+# admin routes need to be protected
+# In ths case, we will use nginx to protect the admin routes
 @app.route('/admin/view_feedback')
 def view_messages():
     messages = Message.query.all()
     return render_template('feedback_dashboard.html', messages=messages)
 
-
+# Delete a feedback message by id
 @app.route('/admin/delete_feedback', methods=['POST'])
 def delete_messages():
     data = request.get_json()
@@ -81,8 +77,8 @@ def delete_messages():
     db.session.commit()
     return jsonify({'message': 'Message deleted'})
 
-
+# start the server
 if __name__ == '__main__':
     with app.app_context():
-        db.create_all()  # 确保在应用上下文中调用
-    app.run(debug=True)
+        db.create_all()
+    app.run(debug=True, host='127.0.0.1', port=5555)
