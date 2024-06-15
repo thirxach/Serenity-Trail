@@ -60,7 +60,7 @@ def get_messages():
 @app.route('/view_messages')
 def view_messages():
     messages = Message.query.all()
-    return render_template('messages.html', messages=messages)
+    return render_template('feedback_dashboard.html', messages=messages)
 
 if __name__ == '__main__':
     with app.app_context():
