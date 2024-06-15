@@ -7,7 +7,7 @@ lock = threading.Lock()
 process = None
 output_history = []  # store the history of output
 
-@app.route('/')
+@app.route('/devops')
 def index():
     return render_template_string('''
     <html>
@@ -21,7 +21,7 @@ def index():
             <script>
                 function getDockerLogs() {
                     var xhr = new XMLHttpRequest();
-                    xhr.open("GET", "/docker_logs", true);
+                    xhr.open("GET", "/devops/docker_logs", true);
                     xhr.onreadystatechange = function() {
                         if (xhr.readyState == 4 && xhr.status == 200) {
                             document.getElementById('output').textContent = xhr.responseText;
@@ -34,10 +34,10 @@ def index():
             <script>
                 function startCommand() {
                     var xhr = new XMLHttpRequest();
-                    xhr.open("GET", "/start", true);
+                    xhr.open("GET", "/devops/start", true);
                     xhr.onreadystatechange = function() {
                         if (xhr.readyState == 4 && xhr.status == 200) {
-                            var source = new EventSource("/stream");
+                            var source = new EventSource("/devops/stream");
                             source.onmessage = function(event) {
                                 document.getElementById('output').textContent += event.data + '\\n';
                             }
@@ -48,7 +48,7 @@ def index():
 
                 function getLastOutput() {
                     var xhr = new XMLHttpRequest();
-                    xhr.open("GET", "/last_output", true);
+                    xhr.open("GET", "/devops/last_output", true);
                     xhr.onreadystatechange = function() {
                         if (xhr.readyState == 4 && xhr.status == 200) {
                             document.getElementById('output').textContent = xhr.responseText;
@@ -61,18 +61,18 @@ def index():
     </html>
     ''')
 
-@app.route('/start')
+@app.route('/devops/start')
 def start():
     global process, output_history
     with lock:
         if process is None or process.poll() is not None:
             output_history = [] # clear the history of output
-            process = subprocess.Popen(["tcping", "1.1.1.1"], stdout=subprocess.PIPE, text=True)
+            process = subprocess.Popen(["bash", "./deploy.sh"], stdout=subprocess.PIPE, text=True)
             return "Command started"
         else:
             return "Command is already running"
 
-@app.route('/stream')
+@app.route('/devops/stream')
 def stream():
     def generate():
         global process
@@ -83,11 +83,11 @@ def stream():
             process.stdout.close()
     return Response(generate(), mimetype='text/event-stream')
 
-@app.route('/last_output')
+@app.route('/devops/last_output')
 def last_output():
     return "".join(output_history)  # return the history of output
 
-@app.route('/docker_logs')
+@app.route('/devops/docker_logs')
 def docker_logs():
     result = subprocess.run(['docker', 'logs', 'serenity'], stdout=subprocess.PIPE, text=True)
     # result = subprocess.run(['whoami'], stdout=subprocess.PIPE, text=True)
