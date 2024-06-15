@@ -1,10 +1,11 @@
 #!/bin/bash
 # cd to the directory of the script CHANGE IT
-cd /root/wintec/Serenity-Trail/
+mkdir /tmp/serenity
+cd /tmp/serenity
 
 # Pull the latest code
-git pull
-
+git clone https://github.com/Bend-Function/Serenity-Trail -b web-dev
+cd Serenity-Trail
 # Remove the old Docker container
 docker rm -f serenity
 
