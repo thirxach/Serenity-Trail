@@ -20,3 +20,5 @@ docker run -d -p 5555:5555 --name serenity serenity
 echo "---------------------------------"
 echo "Deployment completed successfully"
 echo "---------------------------------"
+
+exit 0
