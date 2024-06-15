@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Contact Us - A3</title>
+</head>
+<style>
+    .navbar-brand img {
+        width: 200px;
+        height: auto;
+    }
+</style>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="../static/images/logo.png" alt="Logo"></a>
+    <h2>Feedback Dashboard</h2>
+</nav>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Message</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for message in messages %}
+    <tr>
+        <td>{{ message.name }}</td>
+        <td>{{ message.email }}</td>
+        <td>{{ message.phone }}</td>
+        <td>{{ message.message }}</td>
+        <td>
+            <form action="/admin/delete_feedback" method="post">
+                <input type="hidden" name="id" value="{{ message.id }}">
+                <input type="submit" value="Delete" class="btn btn-danger">
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<script>
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        let formData = new FormData(event.target);
+        let data = {};
+
+        for (let [key, value] of formData.entries()) {
+            data[key] = value;
+        }
+
+        fetch('/admin/delete_feedback', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        }).then(data => {
+            console.log('Success:', data);
+            alert('Deleted successfully!');
+            location.reload();
+        }).catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+});
+</script>
+</body>
+</html>
