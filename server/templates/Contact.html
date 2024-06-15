@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="../static/css.css">
     <title>Contact Us - A3</title>
 </head>
 <body>
@@ -12,12 +12,12 @@
     <div class="logo">
         <img src="logo.png" alt="Logo">
     </div>
-    <ul class="nav">
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="Trail.html">Trail</a></li>
-        <li><a href="About.html">About</a></li>
-        <li><a href="Contact.html">Contact</a></li>
-    </ul>
+    <ul class ="nav links">
+                <li><a href="/"><strong>Home</strong></a></li>
+                <li><a href="/trail"><strong>Trail</strong></a></li>
+                <li><a href="/about"><strong>About</strong></a></li>
+                <li><a href="/contact"><strong>Contact</strong></a></li>
+            </ul>
 </nav>
 <hr>
 
@@ -51,7 +51,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-lg-6 mb-4">
-            <form action="contact.php" method="post">
+            <form action="/feedback" method="post">
                 <div style="display: flex; flex-direction: row; align-items: center;">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -77,14 +77,36 @@
         </div>
     </div>
 </div>
-{% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        {% for category, message in messages %}
-            <div class="alert alert-{{ category }}">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
-{% endwith %}
+
+<script>
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    let formData = new FormData(event.target);
+    let data = {};
+
+    for (let [key, value] of formData.entries()) {
+        data[key] = value;
+    }
+
+    fetch('/feedback', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    }).then(data => {
+        console.log('Success:', data);
+        alert('We have received your message. Thank you!');
+    }).catch((error) => {
+        console.error('Error:', error);
+    });
+});
+</script>
 </body>
 </html>
