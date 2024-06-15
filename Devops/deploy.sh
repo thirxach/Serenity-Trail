@@ -15,7 +15,7 @@ docker rmi serenity
 docker build -t serenity .
 
 # Run the new Docker container
-docker run -d -p 5555:5555 --name serenity serenity
+docker run -d -e TZ=Pacific/Auckland -p 5555:5555 --name serenity serenity
 
 echo "---------------------------------"
 echo "Deployment completed successfully"
