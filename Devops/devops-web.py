@@ -30,7 +30,7 @@ def index():
                     xhr.send();
                 }
             </script>
-            <pre id="output">Click 'Start Command' to execute command...</pre>
+            <pre id="output">Click 'Start deploy' to deploy website for Serenity Trail...</pre>
             <script>
                 function startCommand() {
                     var xhr = new XMLHttpRequest();
