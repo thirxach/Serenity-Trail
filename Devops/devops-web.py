@@ -87,14 +87,18 @@ def stream():
 def last_output():
     return "".join(output_history)  # return the history of output
 
-@app.route('/devops/docker_logs')
+@app.route('/docker_logs')
 def docker_logs():
-    result = subprocess.run(['docker', 'logs', 'serenity'], stdout=subprocess.PIPE, text=True)
-    # result = subprocess.run(['whoami'], stdout=subprocess.PIPE, text=True)
-    if result.returncode == 0:
-        return result.stdout
-    else:
-        return "Failed to retrieve logs"
+    # 使用 subprocess.Popen 获取 Docker 容器的日志
+    process = subprocess.Popen(['docker', 'logs', 'serenity'], stdout=subprocess.PIPE, text=True, bufsize=1)
+    output = []
+    while True:
+        line = process.stdout.readline()
+        if not line:
+            break
+        output.append(line)
+    process.stdout.close()
+    return ''.join(output)
 
 if __name__ == '__main__':
     app.run(debug=True)
