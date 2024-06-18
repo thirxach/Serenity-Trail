@@ -69,7 +69,7 @@ nav {
 .image-container img {
     width: 100%;
     height: auto;
-    padding: 0;
+    display: block;
 }
 
 .text-container {
