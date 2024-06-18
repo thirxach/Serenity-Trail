@@ -43,6 +43,16 @@ nav {
     font-size: 1.5rem;
 }
 
+nav.small {
+    height: 10vh;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.nav.small {
+    font-size: 1.2rem;
+}
+
+
 a {
     color: green;
     text-decoration: none;
