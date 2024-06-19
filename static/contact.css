@@ -379,7 +379,9 @@ button:hover {
     position: relative;
 }
 
-
+gmp-map {
+    height: 100%;
+}
 
 
 .footer {
