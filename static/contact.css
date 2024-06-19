@@ -103,7 +103,7 @@ nav {
         background-color: rgba(51, 51, 51, 0.9);
     }
     .topnav a {
-        display: block; /* 垂直堆叠链接 */
+        display: block;
         text-align: center;
         width: 100%;
         padding: 10px 0;
@@ -208,7 +208,7 @@ nav {
 }
 
 .contact-item {
-    flex: 1;  /* 每个项目占据平等的空间 */
+    flex: 1;
     margin: 0 10px;
     text-align: center;
 }
