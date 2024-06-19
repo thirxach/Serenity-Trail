@@ -16,6 +16,7 @@ div {
     unicode-bidi: isolate;
 }
 
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -28,12 +29,18 @@ nav {
     z-index: 999;
 }
 
+.logo-title-container {
+    display: flex;
+    align-items: center;
+}
+
 .logo img {
     height: 60px;
+    width: auto;
 }
 
 .site-title {
-    font-size: 30px;
+    font-size: 25px;
     color: #fff;
     margin-left: 10px;
     font-family: Arial, sans-serif;
@@ -61,6 +68,53 @@ nav {
     color: black;
 }
 
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 765px) {
+    .hamburger {
+        display: block;
+    }
+    .logo img {
+        height: 50px;
+        width: auto;
+    }
+
+    .site-title {
+        font-size: 20px;
+        color: #fff;
+        margin-left: 10px;
+        font-family: Arial, sans-serif;
+    }
+
+    .topnav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        top: 70px;
+        left: 0;
+        background-color: rgba(51, 51, 51, 0.9);
+    }
+    .topnav a {
+        display: block; /* 垂直堆叠链接 */
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+
+
+
+
+
+
 .image-container {
     position: relative;
     width: 100%;
@@ -82,15 +136,56 @@ nav {
 
 .image-text {
     color: white;
-    font-size: 120px;
+    font-size: 8vw;
     font-weight: bold;
 }
 
 .image-text-subtitle {
-    font-size: 40px;
-    margin-top: 50px;
+    font-size: 1vw;
+    margin-top: 4vw;
     color: white;
 }
+
+@media (max-width: 768px) {
+    .text-container {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .image-text {
+        font-size: 7vw;
+    }
+
+    .image-text-subtitle {
+        font-size: 0.25vw;
+        margin-top: 0.5vw;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .text-container {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .image-text {
+        font-size: 8vw;
+    }
+
+    .image-text-subtitle {
+        display: none;
+    }
+}
+
+
+
 
 .location-start {
     text-align: center;
@@ -113,7 +208,7 @@ nav {
 }
 
 .contact-item {
-    flex: 1;
+    flex: 1;  /* 每个项目占据平等的空间 */
     margin: 0 10px;
     text-align: center;
 }
@@ -139,6 +234,24 @@ nav {
     margin-bottom: 5px;
     font-size: 18px;
 }
+
+@media (max-width: 680px) {
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .contact-item {
+        flex: none;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+
+
+
+
+
 
 
 .message-section {

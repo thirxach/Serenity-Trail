@@ -8,170 +8,185 @@
 </head>
 
 <body>
-    <a href="#top" id="backToTop">Back to top</a>
-    <nav>
+<a href="#top" id="backToTop">Back to top</a>
+
+<nav>
+    <div class="logo-title-container">
         <div class="logo">
-            <a href="index.html"> <img src="../static/images/logo.png" alt="Logo"></a>
+            <a href="index.html"><img src="../static/images/logo.png" alt="Logo"></a>
         </div>
-        <div class="site-title">
-            Serenity Trail
-        </div>
-
-        <div class="topnav">
-            <a href="index.html">Home</a>
-            <a href="Trail.html">Trail</a>
-            <a href="About.html">About</a>
-            <a href="Contact.html">Contact</a>
-        </div>
-    </nav>
-
-    <div class="image-container">
-        <img src="../static/images/ContacePage.jpg" alt="Contact Us">
-        <div class="text-container">
-            <div class="image-text">
-                Contact Us
-                <p class="image-text-subtitle" style="font-size: 30px">Your feedback will help us do better</p>
-            </div>
-        </div>
+        <div class="site-title">Serenity Trail</div>
     </div>
 
-
-    <div class="contact-section">
-        <div class="contact-item">
-            <div class="contact-icon">
-                <img src="../static/images/Phoneicon.png" alt="Phone Icon">
-            </div>
-            <h2>PHONE</h2>
-            <p><strong>Virtual Hiking Group Contracting</strong><br>
-                0218644754</p>
-        </div>
-
-        <div class="contact-item">
-            <div class="contact-icon">
-                <img src="../static/images/Loactionicon.png" alt="Location Icon">
-            </div>
-            <h2>LOCATION</h2>
-            <p><strong>Business Group Contracting</strong><br>
-                123 Border street, Chartwell, Hamilton, New Zealand</p>
-        </div>
-
-        <div class="contact-item">
-            <div class="contact-icon">
-                <img src="../static/images/Emailicon.png" alt="Email Icon">
-            </div>
-            <h2>EMAIL</h2>
-            <p><strong>Request for personal</strong><br>
-                info@Serenity-trail.com</p>
-        </div>
+    <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a href="Trail.html">Content</a>
+        <a href="About.html">About Us</a>
+        <a href="Contact.html">Contact</a>
     </div>
+</nav>
 
-
-    <div class="message-section">
-        <div class="message-info">
-            <h1>Message Us</h1>
-            <p>Thank you for visiting our contact page.
-                We highly value your feedback as it is crucial for our future development and improvements.
-                Your support is our driving force for continuous progress!
-            </p>
-        </div>
-
-        <div class="message-form">
-
-            <form action="/feedback" method="post">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number:</label>
-                    <input type="number" id="phone" name="phone">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Your Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </div>
-
-    <div class="location-start">
-        <h1>SerenityTrail Office Locations</h1>
-    </div>
-
-    <div id="map"></div>
-    <script>
-        function initMap() {
-            var mapOptions = {
-                zoom: 15,
-                center: {lat: -37.7870, lng: 175.2793}
-            };
-            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-            var locations = [
-                {lat: -37.7870, lng: 175.2793},
-                {lat: -37.7875, lng: 175.2820}
-            ];
-
-            locations.forEach(function(location) {
-                var marker = new google.maps.Marker({
-                    position: location,
-                    map: map,
-                    title: location.title
-                });
-            });
+<script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+        var nav = document.querySelector('.topnav');
+        if (nav.style.display === "block") {
+            nav.style.display = "none";
+        } else {
+            nav.style.display = "block";
         }
-    </script>
+    });
+</script>
 
 
-    <div class="footer">
-        <a href="https://www.youtube.com/watch?v=WyimW5G14lA&t=6s"><img src="../static/images/YoutubeLogo.png"></a>
-        <a href="https://www.facebook.com/profile.php?id=61560889890946"><img src="../static/images/FacebookLogo.png"></a>
-        <a href="https://www.instagram.com/serenitytrail_/"><img src="../static/images/InstagramLogo.png"></a>
+<div class="image-container">
+    <img src="../static/images/ContacePage.jpg" alt="Contact Us">
+    <div class="text-container">
+        <div class="image-text">
+            Contact Us
+            <p class="image-text-subtitle" style="font-size: 30px">Your feedback will help us do better</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="contact-section">
+    <div class="contact-item">
+        <div class="contact-icon">
+            <img src="../static/images/Phoneicon.png" alt="Phone Icon">
+        </div>
+        <h2>PHONE</h2>
+        <p><strong>Virtual Hiking Group Contracting</strong><br>
+            0218644754</p>
     </div>
 
-    <div class="footer">
-        <p>Copyright&copy; 2024 Serenity Trail. All rights reserved.</p>
+    <div class="contact-item">
+        <div class="contact-icon">
+            <img src="../static/images/Loactionicon.png" alt="Location Icon">
+        </div>
+        <h2>LOCATION</h2>
+        <p><strong>Business Group Contracting</strong><br>
+            123 Border street, Chartwell, Hamilton, New Zealand</p>
     </div>
 
-    <script>
-        document.querySelector('form').addEventListener('submit', function (event) {
-            event.preventDefault();
+    <div class="contact-item">
+        <div class="contact-icon">
+            <img src="../static/images/Emailicon.png" alt="Email Icon">
+        </div>
+        <h2>EMAIL</h2>
+        <p><strong>Request for personal</strong><br>
+            info@Serenity-trail.com</p>
+    </div>
+</div>
 
-            let formData = new FormData(event.target);
-            let data = {};
 
-            for (let [key, value] of formData.entries()) {
-                data[key] = value;
-            }
+<div class="message-section">
+    <div class="message-info">
+        <h1>Message Us</h1>
+        <p>Thank you for visiting our contact page.
+            We highly value your feedback as it is crucial for our future development and improvements.
+            Your support is our driving force for continuous progress!
+        </p>
+    </div>
 
-            fetch('/feedback', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            }).then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            }).then(data => {
-                console.log('Success:', data);
-                alert('We have received your message. Thank you!');
-            }).catch((error) => {
-                console.error('Error:', error);
+    <div class="message-form">
+
+        <form action="/feedback" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="number" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div class="location-start">
+    <h1>SerenityTrail Office Locations</h1>
+</div>
+
+
+<div id="map"></div>
+<script>
+    function initMap() {
+        var mapOptions = {
+            zoom: 15,
+            center: {lat: -37.7870, lng: 175.2793}
+        };
+        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+        var locations = [
+            {lat: -37.7870, lng: 175.2793},
+            {lat: -37.7875, lng: 175.2820}
+        ];
+
+        locations.forEach(function(location) {
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: location.title
             });
         });
-    </script>
+    }
+</script>
+
+
+<div class="footer">
+    <a href="https://www.youtube.com/watch?v=WyimW5G14lA&t=6s"><img src="../static/images/YoutubeLogo.png"></a>
+    <a href="https://www.facebook.com/profile.php?id=61560889890946"><img src="../static/images/FacebookLogo.png"></a>
+    <a href="https://www.instagram.com/serenitytrail_/"><img src="../static/images/InstagramLogo.png"></a>
+</div>
+
+<div class="footer">
+    <p>Copyright&copy; 2024 Serenity Trail. All rights reserved.</p>
+</div>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        let formData = new FormData(event.target);
+        let data = {};
+
+        for (let [key, value] of formData.entries()) {
+            data[key] = value;
+        }
+
+        fetch('/feedback', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        }).then(data => {
+            console.log('Success:', data);
+            alert('We have received your message. Thank you!');
+        }).catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+</script>
 
 </body>
 </html>
