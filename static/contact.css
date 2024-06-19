@@ -291,7 +291,6 @@ nav {
     text-decoration: underline;
 }
 
-
 .message-form {
     flex: 1;
     padding: 40px;
@@ -322,7 +321,6 @@ nav {
     border-radius: 4px;
 }
 
-
 button {
     padding: 10px 15px;
     background-color: #003366;
@@ -337,12 +335,52 @@ button:hover {
     background-color: #00509e;
 }
 
+@media (max-width: 700px) {
+    .message-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .message-info {
+        margin-right: 0;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .message-form {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+
+    .form-group label {
+        min-width: 0;
+        margin-right: 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .form-group input, .form-group textarea {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
 #map {
-    height: 500px;
+    height: 450px;
     width: 100%;
     position: relative;
-    bottom: auto;
 }
+
+
+
 
 .footer {
     overflow:hidden;

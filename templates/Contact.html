@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/contact.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1F1Cs5j7s_noE74ydshpxwUdXNn74PoE&callback=initMap" async defer></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=console.debug&libraries=maps,marker&v=beta"></script>
     <title>Serenity Trail</title>
 </head>
 
@@ -80,6 +80,8 @@
 </div>
 
 
+
+
 <div class="message-section">
     <div class="message-info">
         <h1>Message Us</h1>
@@ -132,8 +134,8 @@
         var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
         var locations = [
-            {lat: -37.7870, lng: 175.2793},
-            {lat: -37.7875, lng: 175.2820}
+            {lat: -37.7870, lng: 175.2793, title: "Location 1"},
+            {lat: -37.7875, lng: 175.2820, title: "Location 2"}
         ];
 
         locations.forEach(function(location) {
