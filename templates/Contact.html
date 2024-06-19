@@ -3,12 +3,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/contact.css">
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5DomT6l3_KH0gLfH-bn0iL-Lsm3u7XTA&callback=console.debug&libraries=maps,marker&v=beta">
-    </script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5DomT6l3_KH0gLfH-bn0iL-Lsm3u7XTA&callback=console.debug&libraries=maps,marker&v=beta"></script>
     <title>Serenity Trail</title>
 </head>
 
-<body>
+<body onload="initMap()">
 <a href="#top" id="backToTop">Back to top</a>
 
 <nav>
@@ -125,9 +124,29 @@
 </div>
 
 
-<gmp-map center="-37.789161682128906,175.27989196777344" zoom="14" map-id="DEMO_MAP_ID">
-    <gmp-advanced-marker position="-37.789161682128906,175.27989196777344" title="My location"></gmp-advanced-marker>
-</gmp-map>
+<div id="map"></div>
+<script>
+    function initMap() {
+        var mapOptions = {
+            zoom: 15,
+            center: {lat: -37.7870, lng: 175.2793}
+        };
+        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+        var locations = [
+            {lat: -37.7870, lng: 175.2793, title: "Location 1"},
+            {lat: -37.7875, lng: 175.2820, title: "Location 2"}
+        ];
+
+        locations.forEach(function(location) {
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: location.title
+            });
+        });
+    }
+</script>
 
 
 <div class="footer">
