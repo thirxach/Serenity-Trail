@@ -1,40 +1,113 @@
-<html>
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css.css">
-    <title> A3 </title>
-    <style>
-        .logo img {
-            width: 200px;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/index.css">
+    <title>Serenity Trail</title>
 </head>
 
 <body>
-<nav id="destop-nav">
-    <div class="logo"><img src="static/images/logo.png" alt="Logo"></div>
-    <div>
-        <ul class="nav links">
-            <li><a href="/"><strong>Home</strong></a></li>
-            <li><a href="/trail"><strong>Trail</strong></a></li>
-            <li><a href="/about"><strong>About</strong></a></li>
-            <li><a href="/contact"><strong>Contact</strong></a></li>
-        </ul>
-    </div>
-</nav>
-<hr>
-<section id="profile">
-    <div class="section_picture">
-        <img src="../static/images/Home.jpg" alt="HomePage">
-        <div class="overlay-text"><strong>SERENITY TRAIL</strong></div>
-        <div class="overlay-text1">Beyond Pixels, Beyond Limits, Explore Virtually.</div>
-    </div>
-</section>
-<div id="lfnowf"></div>
-<div id="fg"></div>
+    <a href="#top" id="backToTop">Back to top</a>
 
+    <nav>
+        <div class="logo-title-container">
+            <div class="logo">
+                <a href="index.html"><img src="../static/images/logo.png" alt="Logo"></a>
+            </div>
+            <div class="site-title">Serenity Trail</div>
+        </div>
+
+        <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+        <div class="topnav" id="myTopnav">
+            <a href="/">Home</a>
+            <a href="/trail">Trail</a>
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            var nav = document.querySelector('.topnav');
+            if (nav.style.display === "block") {
+                nav.style.display = "none";
+            } else {
+                nav.style.display = "block";
+            }
+        });
+    </script>
+
+
+
+
+    <div class="slider">
+        <div class="gallery">
+            <div class="slides">
+                <div class="slide">
+                    <img src="../static/images/Home.jpg" alt="Image 1">
+                </div>
+                <div class="slide">
+                    <img src="../static/images/Beach01.jpg" alt="Image 2">
+                </div>
+                <div class="slide">
+                    <img src="../static/images/Forest01.jpg" alt="Image 3">
+                </div>
+                <div class="slide">
+                    <img src="../static/images/Forest02.jpg" alt="Image 4">
+                </div>
+                <div class="slide">
+                    <img src="../static/images/Forest03.jpg" alt="Image 5">
+                </div>
+                <div class="slide">
+                    <img src="../static/images/Lake01.jpg" alt="Image 6">
+                </div>
+            </div>
+
+            <div class="text-container">
+                <div class="image-text">
+                    Serenity Trail
+                    <p class="image-text-subtitle">Beyond Pixels, Beyond Limits, Explore Virtually</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const slideItems = document.querySelectorAll('.slide');
+        let index = 0;
+
+        function showNextSlide() {
+            index = (index + 1) % slideItems.length;
+            updateSliderPosition();
+        }
+
+        function updateSliderPosition() {
+            slides.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        setInterval(showNextSlide, 3000);
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <div class="footer">
+        <a href="https://www.youtube.com/watch?v=WyimW5G14lA&t=6s"><img src="../static/images/YoutubeLogo.png"></a>
+        <a href="https://www.facebook.com/profile.php?id=61560889890946"><img src="../static/images/FacebookLogo.png"></a>
+        <a href="https://www.instagram.com/serenitytrail_/"><img src="../static/images/InstagramLogo.png"></a>
+    </div>
+
+    <div class="footer">
+        <p>Copyright&copy; 2024 Serenity Trail. All rights reserved.</p>
+    </div>
 
 </body>
 </html>
