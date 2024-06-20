@@ -166,12 +166,12 @@ nav {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
+    max-width: 90vw;
+    margin: 5vh auto;
+    padding: 2vh;
     background-color: #faf6e8;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 1vh;
+    box-shadow: 0 0.5vh 0.75vh rgba(0,0,0,0.1);
 }
 
 .image-box {
@@ -181,8 +181,8 @@ nav {
 
 .image-box img {
     width: 100%;
-    height: auto;
-    border-radius: 4px;
+    height: 100%;
+    border-radius: 0.5vh;
 }
 
 .text-box {
@@ -190,18 +190,73 @@ nav {
 }
 
 .text-box h1, .text-box p {
-    margin: 10px 0;
+    margin: 1vh 0;
 }
 
 .text-box h1 {
     color: #2a7ae2;
-    font-size: 45px;
+    font-size: 3vw;
 }
 
 .text-box p {
     font-family: Optima, sans-serif;
     text-indent: 0;
-    font-size: 25px;
+    font-size: 2vw;
+}
+
+/* Responsive adjustments for screens less than 680px */
+@media (max-width: 680px) {
+    .content {
+        flex-direction: column;
+        padding: 5vw;
+    }
+
+    .image-box {
+        padding-right: 0;
+        margin-bottom: 2vh;
+    }
+
+    .text-box {
+        flex: none;
+    }
+
+    .text-box h1 {
+        font-size: 8vw;
+    }
+
+    .text-box p {
+        font-size: 5vw;
+    }
+}
+
+
+
+
+
+
+
+.Overview-image {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    display: block;
+    text-decoration: none;
 }
 
 
@@ -245,6 +300,9 @@ nav {
 .contact-section button:hover {
     background-color: #cdd625;
 }
+
+
+
 
 
 
