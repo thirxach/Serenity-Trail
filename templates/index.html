@@ -39,62 +39,75 @@
 
 
 
-
-    <div class="slider">
-        <div class="gallery">
-            <div class="slides">
-                <div class="slide">
-                    <img src="../static/images/Home.jpg" alt="Image 1">
-                </div>
-                <div class="slide">
-                    <img src="../static/images/Beach01.jpg" alt="Image 2">
-                </div>
-                <div class="slide">
-                    <img src="../static/images/Forest01.jpg" alt="Image 3">
-                </div>
-                <div class="slide">
-                    <img src="../static/images/Forest02.jpg" alt="Image 4">
-                </div>
-                <div class="slide">
-                    <img src="../static/images/Forest03.jpg" alt="Image 5">
-                </div>
-                <div class="slide">
-                    <img src="../static/images/Lake01.jpg" alt="Image 6">
-                </div>
+    <div class="image-container">
+        <img src="../static/images/Home.jpg" alt="Serenity Trail" class="image fade-in" style="opacity: 1;">
+        <img src="../static/images/Beach01.jpg" alt="Second Image" class="image">
+        <img src="../static/images/Lake01.jpg" alt="Third Image" class="image">
+        <img src="../static/images/Forest01.jpg" alt="Fourth Image" class="image">
+        <img src="../static/images/Forest02.jpg" alt="Fifth Image" class="image">
+        <img src="../static/images/Forest03.jpg" alt="Sixth Image" class="image">
+        <div class="text-container">
+            <div class="image-text">
+                Serenity Trail
+                <p class="image-text-subtitle">Beyond Pixels, Beyond Limits, Explore Virtually</p>
             </div>
-
-            <div class="text-container">
-                <div class="image-text">
-                    Serenity Trail
-                    <p class="image-text-subtitle">Beyond Pixels, Beyond Limits, Explore Virtually</p>
-                </div>
-            </div>
-
         </div>
     </div>
 
     <script>
-        const slides = document.querySelector('.slides');
-        const slideItems = document.querySelectorAll('.slide');
-        let index = 0;
+        const images = [
+            "../static/images/Home.jpg",
+            "../static/images/Beach01.jpg",
+            "../static/images/Lake01.jpg",
+            "../static/images/Forest01.jpg",
+            "../static/images/Forest02.jpg",
+            "../static/images/Forest03.jpg"
+        ];
+        let currentIndex = 0;
 
-        function showNextSlide() {
-            index = (index + 1) % slideItems.length;
-            updateSliderPosition();
+        function changeImage() {
+            const currentImage = document.querySelector('.image.fade-in');
+            currentImage.style.opacity = 0;
+            currentImage.classList.remove('fade-in');
+
+            currentIndex = (currentIndex + 1) % images.length;
+            const nextImage = document.querySelectorAll('.image')[currentIndex];
+            nextImage.style.opacity = 1;
+            nextImage.classList.add('fade-in');
         }
 
-        function updateSliderPosition() {
-            slides.style.transform = `translateX(${-index * 100}%)`;
-        }
+        setInterval(changeImage, 3000);
 
-        setInterval(showNextSlide, 3000);
     </script>
 
 
+    <div class="content">
+        <div class="image-box">
+            <img src="../static/images/Homepage2.JPG" alt="Nature View">
+        </div>
+        <div class="text-box">
+            <h1>Welcome to Serenity Trail</h1>
+            <p>Explore the beauty of nature from the comfort of your home. Serenity Trail offers a unique experience to explore the world virtually. Discover the hidden gems of nature and experience the great outdoors like never before.</p>
+            <p>Our mission is to bring the beauty of nature to you. We believe that everyone should have the opportunity to experience the wonders of the natural world, no matter where they are. With Serenity Trail, you can explore the world from the comfort of your home.</p>
+            <p>So what are you waiting for? Start your journey today and experience the beauty of nature like never before.</p>
+        </div>
+    </div>
 
 
 
 
+
+
+    <div class="contact-section">
+        <h1>CONNECT WITH US</h1>
+        <p>
+            Excited to explore new opportunities or keen to be part of our dynamic team?
+            Get in touch with Innovatech Solutions today to discover how we can drive growth and creativity in your projects.
+        </p>
+        <a href="/contact">
+            <button>Contact Us</button>
+        </a>
+    </div>
 
 
 
