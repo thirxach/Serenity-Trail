@@ -372,6 +372,13 @@ button:hover {
 
 
 
+
+#map {
+    height: 450px;
+    width: 100%;
+    position: relative;
+}
+
 .footer {
     overflow:hidden;
     text-align: center;
