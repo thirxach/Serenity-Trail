@@ -1,148 +1,143 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/index.css">
     <title>Serenity Trail</title>
 </head>
-
 <body>
-    <a href="#top" id="backToTop">Back to top</a>
+<!-- Back to top link -->
+<a href="#top" id="backToTop">Back to top</a>
 
+<!-- Colorblind mode button -->
+<button id="colorSwitcher" onclick="toggleColorMode()">Colorblind Mode</button>
+<script>
+    function toggleColorMode() {
+        var body = document.body;
+        body.classList.toggle('colorblind-mode'); // Toggle colorblind mode
+    }
+</script>
 
-    <button id="colorSwitcher" onclick="toggleColorMode()">Colorblind Mode</button>
-    <script>
-        function toggleColorMode() {
-            var body = document.body;
-            body.classList.toggle('colorblind-mode');
+<!-- Navigation bar -->
+<nav>
+    <div class="logo-title-container">
+        <div class="logo">
+            <a href="index.html"><img src="../static/images/logo.png" alt="Logo"></a>
+        </div>
+        <div class="site-title">Serenity Trail</div>
+    </div>
+    <!-- Hamburger menu for small screens -->
+    <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    <div class="topnav" id="myTopnav">
+        <a href="/">Home</a>
+        <a href="/trail">Trail</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+    </div>
+</nav>
+
+<script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+        var nav = document.querySelector('.topnav');
+        if (nav.style.display === "block") {
+            nav.style.display = "none"; // Hide menu
+        } else {
+            nav.style.display = "block"; // Show menu
         }
-    </script>
+    });
+</script>
 
-    <nav>
-        <div class="logo-title-container">
-            <div class="logo">
-                <a href="index.html"><img src="../static/images/logo.png" alt="Logo"></a>
-            </div>
-            <div class="site-title">Serenity Trail</div>
-        </div>
-
-        <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
-        <div class="topnav" id="myTopnav">
-            <a href="/">Home</a>
-            <a href="/trail">Trail</a>
-            <a href="/about">About Us</a>
-            <a href="/contact">Contact</a>
-        </div>
-    </nav>
-
-    <script>
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            var nav = document.querySelector('.topnav');
-            if (nav.style.display === "block") {
-                nav.style.display = "none";
-            } else {
-                nav.style.display = "block";
-            }
-        });
-    </script>
-
-
-
-    <div class="image-container">
-        <img src="../static/images/Home.jpg" alt="Serenity Trail" class="image fade-in" style="opacity: 1;">
-        <img src="../static/images/Beach01.jpg" alt="Second Image" class="image">
-        <img src="../static/images/Lake01.jpg" alt="Third Image" class="image">
-        <img src="../static/images/Forest01.jpg" alt="Fourth Image" class="image">
-        <img src="../static/images/Forest02.jpg" alt="Fifth Image" class="image">
-        <img src="../static/images/Forest03.jpg" alt="Sixth Image" class="image">
-        <div class="text-container">
-            <div class="image-text">
-                Serenity Trail
-                <p class="image-text-subtitle">Beyond Pixels, Beyond Limits, Explore Virtually</p>
-            </div>
+<!-- Image slideshow with text overlay -->
+<div class="image-container">
+    <img src="../static/images/Home.jpg" alt="Serenity Trail" class="image fade-in" style="opacity: 1;">
+    <img src="../static/images/Beach01.jpg" alt="Second Image" class="image">
+    <img src="../static/images/Lake01.jpg" alt="Third Image" class="image">
+    <img src="../static/images/Forest01.jpg" alt="Fourth Image" class="image">
+    <img src="../static/images/Forest02.jpg" alt="Fifth Image" class="image">
+    <img src="../static/images/Forest03.jpg" alt="Sixth Image" class="image">
+    <div class="text-container">
+        <div class="image-text">
+            Serenity Trail
+            <p class="image-text-subtitle">Beyond Pixels, Beyond Limits, Explore Virtually</p>
         </div>
     </div>
+</div>
 
-    <script>
-        const images = [
-            "../static/images/Home.jpg",
-            "../static/images/Beach01.jpg",
-            "../static/images/Lake01.jpg",
-            "../static/images/Forest01.jpg",
-            "../static/images/Forest02.jpg",
-            "../static/images/Forest03.jpg"
-        ];
-        let currentIndex = 0;
+<script>
+    const images = [
+        "../static/images/Home.jpg",
+        "../static/images/Beach01.jpg",
+        "../static/images/Lake01.jpg",
+        "../static/images/Forest01.jpg",
+        "../static/images/Forest02.jpg",
+        "../static/images/Forest03.jpg"
+    ];
+    let currentIndex = 0;
 
-        function changeImage() {
-            const currentImage = document.querySelector('.image.fade-in');
-            currentImage.style.opacity = 0;
-            currentImage.classList.remove('fade-in');
+    function changeImage() {
+        const currentImage = document.querySelector('.image.fade-in');
+        currentImage.style.opacity = 0;
+        currentImage.classList.remove('fade-in');
 
-            currentIndex = (currentIndex + 1) % images.length;
-            const nextImage = document.querySelectorAll('.image')[currentIndex];
-            nextImage.style.opacity = 1;
-            nextImage.classList.add('fade-in');
-        }
+        currentIndex = (currentIndex + 1) % images.length;
+        const nextImage = document.querySelectorAll('.image')[currentIndex];
+        nextImage.style.opacity = 1;
+        nextImage.classList.add('fade-in');
+    }
 
-        setInterval(changeImage, 3000);
+    setInterval(changeImage, 3000); // Change image every 3 seconds
 
-    </script>
+</script>
 
-
-    <div class="content">
-        <div class="image-box">
-            <img src="../static/images/Homepage2.JPG" alt="Nature View">
-        </div>
-        <div class="text-box">
-            <h1>Welcome to Serenity Trail</h1>
-            <p>Explore the beauty of nature from the comfort of your home. Serenity Trail offers a unique experience to explore the world virtually. Discover the hidden gems of nature and experience the great outdoors like never before.</p>
-            <p>Our mission is to bring the beauty of nature to you. We believe that everyone should have the opportunity to experience the wonders of the natural world, no matter where they are. With Serenity Trail, you can explore the world from the comfort of your home.</p>
-            <p>So what are you waiting for? Start your journey today and experience the beauty of nature like never before.</p>
-        </div>
+<!-- Welcome section -->
+<div class="content">
+    <div class="image-box">
+        <img src="../static/images/Homepage2.JPG" alt="Nature View">
     </div>
-
-
-    <div class="Overview-image" style="background-image: url('../static/images/HamiltGarden.jpeg');">
-        <a href="/trail#video01" class="text-overlay">Hamilton Gardens</a>
+    <div class="text-box">
+        <h1>Welcome to Serenity Trail</h1>
+        <p>Explore the beauty of nature from the comfort of your home. Serenity Trail offers a unique experience to explore the world virtually. Discover the hidden gems of nature and experience the great outdoors like never before.</p>
+        <p>Our mission is to bring the beauty of nature to you. We believe that everyone should have the opportunity to experience the wonders of the natural world, no matter where they are. With Serenity Trail, you can explore the world from the comfort of your home.</p>
+        <p>So what are you waiting for? Start your journey today and experience the beauty of nature like never before.</p>
     </div>
-    <div class="Overview-image" style="background-image: url('../static/images/Redwoods.jpeg');">
-        <a href="/trail#video02" class="text-overlay">Redwoods Forest</a>
-    </div>
-    <div class="Overview-image" style="background-image: url('../static/images/TaurangaBeach.jpg');">
-        <a href="/trail#video03" class="text-overlay">Maunganui beach</a>
-    </div>
-    <div class="Overview-image" style="background-image: url('../static/images/LakeNagaroto.jpg');">
-        <a href="/trail#video04" class="text-overlay">Lake Ngaroto</a>
-    </div>
+</div>
 
+<!-- Overview images with links -->
+<div class="Overview-image" style="background-image: url('../static/images/HamiltGarden.jpeg');">
+    <a href="/trail#video01" class="text-overlay">Hamilton Gardens</a>
+</div>
+<div class="Overview-image" style="background-image: url('../static/images/Redwoods.jpeg');">
+    <a href="/trail#video02" class="text-overlay">Redwoods Forest</a>
+</div>
+<div class="Overview-image" style="background-image: url('../static/images/TaurangaBeach.jpg');">
+    <a href="/trail#video03" class="text-overlay">Maunganui Beach</a>
+</div>
+<div class="Overview-image" style="background-image: url('../static/images/LakeNagaroto.jpg');">
+    <a href="/trail#video04" class="text-overlay">Lake Ngaroto</a>
+</div>
 
+<!-- Contact section -->
+<div class="contact-section">
+    <h1>CONNECT WITH US</h1>
+    <p>
+        Excited to explore new opportunities or keen to be part of our dynamic team?
+        Get in touch with Innovatech Solutions today to discover how we can drive growth and creativity in your projects.
+    </p>
+    <a href="/contact">
+        <button>Contact Us</button>
+    </a>
+</div>
 
-
-
-    <div class="contact-section">
-        <h1>CONNECT WITH US</h1>
-        <p>
-            Excited to explore new opportunities or keen to be part of our dynamic team?
-            Get in touch with Innovatech Solutions today to discover how we can drive growth and creativity in your projects.
-        </p>
-        <a href="/contact">
-            <button>Contact Us</button>
-        </a>
-    </div>
-
-
-
-
-    <div class="footer">
-        <a href="https://www.youtube.com/@SerenityTrail"><img src="../static/images/YoutubeLogo.png"></a>
-        <a href="https://www.facebook.com/profile.php?id=61560889890946"><img src="../static/images/FacebookLogo.png"></a>
-        <a href="https://www.instagram.com/serenitytrail_/"><img src="../static/images/InstagramLogo.png"></a>
-    </div>
-
-    <div class="footer">
-        <p>Copyright&copy; 2024 Serenity Trail. All rights reserved.</p>
-    </div>
+<!-- Footer section -->
+<div class="footer">
+    <a href="https://www.youtube.com/@SerenityTrail"><img src="../static/images/YoutubeLogo.png"></a>
+    <a href="https://www.facebook.com/profile.php?id=61560889890946"><img src="../static/images/FacebookLogo.png"></a>
+    <a href="https://www.instagram.com/serenitytrail_/"><img src="../static/images/InstagramLogo.png"></a>
+</div>
+<div class="footer">
+    <p>&copy; 2024 Serenity Trail. All rights reserved.</p>
+</div>
 
 </body>
 </html>

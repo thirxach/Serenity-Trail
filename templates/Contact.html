@@ -6,9 +6,11 @@
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5DomT6l3_KH0gLfH-bn0iL-Lsm3u7XTA&callback=console.debug&libraries=maps,marker&v=beta"></script>
     <title>Serenity Trail</title>
 </head>
-
+<!-- Load the map when refresh the page-->
 <body onload="initMap()">
+<!-- Add a button to go back to the top of the page -->
 <a href="#top" id="backToTop">Back to top</a>
+<!-- Add a button to switch the color mode -->
 <button id="colorSwitcher" onclick="toggleColorMode()">Colorblind Mode</button>
 <script>
     function toggleColorMode() {
@@ -17,6 +19,7 @@
     }
 </script>
 
+<!-- Add a button to go back to the top of the page -->
 <nav>
     <div class="logo-title-container">
         <div class="logo">
@@ -24,7 +27,7 @@
         </div>
         <div class="site-title">Serenity Trail</div>
     </div>
-
+<!-- The hamburger button for mobile view -->
     <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
     <div class="topnav" id="myTopnav">
         <a href="/">Home</a>
@@ -45,7 +48,7 @@
     });
 </script>
 
-
+<!-- the images and Contact us paragraph -->
 <div class="image-container">
     <img src="../static/images/ContacePage.jpg" alt="Contact Us">
     <div class="text-container">
@@ -56,7 +59,7 @@
     </div>
 </div>
 
-
+<!-- the contact information -->
 <div class="contact-section">
     <div class="contact-item">
         <div class="contact-icon">
@@ -88,7 +91,7 @@
 
 
 
-
+<!-- the message section -->
 <div class="message-section">
     <div class="message-info">
         <h1>Message Us</h1>
@@ -97,7 +100,7 @@
             Your support is our driving force for continuous progress!
         </p>
     </div>
-
+    <!-- the form for user to give their feedback-->
     <div class="message-form">
 
         <form action="/feedback" method="post">
@@ -126,11 +129,12 @@
     </div>
 </div>
 
+<!-- the location section -->
 <div class="location-start">
     <h1>SerenityTrail Office Locations</h1>
 </div>
 
-
+<!-- Google map -->
 <div id="map"></div>
 <script>
     function initMap() {
@@ -155,7 +159,7 @@
     }
 </script>
 
-
+<!-- the footer section -->
 <div class="footer">
     <a href="https://www.youtube.com/@SerenityTrail"><img src="../static/images/YoutubeLogo.png"></a>
     <a href="https://www.facebook.com/profile.php?id=61560889890946"><img src="../static/images/FacebookLogo.png"></a>

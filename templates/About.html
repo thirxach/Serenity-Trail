@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,198 +7,184 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Serenity Trail</title>
 </head>
-
 <body>
-    <a href="#top" id="backToTop">Back to top</a>
+<!-- Back to top link -->
+<a href="#top" id="backToTop">Back to top</a>
 
+<!-- Button to toggle colorblind mode -->
+<button id="colorSwitcher" onclick="toggleColorMode()">Colorblind Mode</button>
+<script>
+    function toggleColorMode() {
+        var body = document.body;
+        body.classList.toggle('colorblind-mode'); // Toggle colorblind mode
+    }
+</script>
 
-    <button id="colorSwitcher" onclick="toggleColorMode()">Colorblind Mode</button>
-    <script>
-        function toggleColorMode() {
-            var body = document.body;
-            body.classList.toggle('colorblind-mode');
+<!-- Navigation bar -->
+<nav>
+    <div class="logo-title-container">
+        <div class="logo">
+            <a href="index.html"><img src="../static/images/logo.png" alt="Logo"></a>
+        </div>
+        <div class="site-title">Serenity Trail</div>
+    </div>
+
+    <!-- Hamburger menu button for small screens -->
+    <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    <div class="topnav" id="myTopnav">
+        <a href="/">Home</a>
+        <a href="/trail">Trail</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+    </div>
+</nav>
+
+<!-- JavaScript to toggle the navigation bar on small screens -->
+<script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+        var nav = document.querySelector('.topnav');
+        if (nav.style.display === "block") {
+            nav.style.display = "none";
+        } else {
+            nav.style.display = "block";
         }
-    </script>
+    });
+</script>
 
+<!-- Image container with text overlay -->
+<div class="image-container">
+    <img src="../static/images/About.png" alt="Contact Us">
+    <div class="text-container">
+        <div class="image-text">About Us</div>
+    </div>
+</div>
 
+<!-- Main content container -->
+<div class="container">
+    <h1>Our Vision</h1>
+    <p>
+        We are committed to providing unmatched virtual walking experiences through cutting-edge virtual reality technology to users around the globe.
+        Our goal is to break geographical barriers, enabling people to easily explore every corner of the world from their homes, experiencing the beauty of foreign cultures and nature.
+        Through our services, we aim to enhance global cultural exchanges and understanding, offering users a safe and convenient way to explore new worlds.
+    </p>
+    <br><br>
+    <h1>Our Advantages</h1>
+    <p>
+        <strong>Technology Advance:</strong> Using the latest in virtual reality technology, we offer high-definition, immersive visual and auditory experiences that make users feel as though they are truly there.
+    </p>
+    <br>
+    <p>
+        <strong>Destination Choices:</strong> We offer an extensive catalog of destinations, covering everything from world-famous cities to remote natural landscapes, meeting the exploratory needs of different users.
+    </p>
+    <br>
+    <p>
+        <strong>Ease of Access and Use:</strong> Our platform is accessible on multiple devices, including VR headsets, smartphones, and computers, allowing users to enjoy virtual walks anytime, anywhere.
+    </p>
+</div>
 
-    <nav>
-        <div class="logo-title-container">
-            <div class="logo">
-                <a href="index.html"><img src="../static/images/logo.png" alt="Logo"></a>
+<!-- Team section -->
+<div class="team-start">
+    <h1>Our Team</h1>
+</div>
+
+<div class="card-container">
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="../static/images/Thireach.jpeg" alt="Thireach" style="width:100%">
+                <h1>Thireach</h1>
+                <p>Wintec</p>
+                <div style="margin: 24px 0;">
+                    <a href="https://www.facebook.com/ThireachChhun"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/_thirxach_"><i class="fa fa-instagram"></i></a>
+                </div>
+                <button onclick="flipCard(this)">Details</button>
             </div>
-            <div class="site-title">Serenity Trail</div>
+            <div class="flip-card-back">
+                <h1>Human Resources</h1>
+                <p>Handle the Recruitment, Employee relations and Training.</p>
+            </div>
         </div>
+    </div>
 
-        <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
-        <div class="topnav" id="myTopnav">
-            <a href="/">Home</a>
-            <a href="/trail">Trail</a>
-            <a href="/about">About Us</a>
-            <a href="/contact">Contact</a>
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="../static/images/Sujith.jpeg" alt="Sujith" style="width:100%">
+                <h1>Sujith</h1>
+                <p>Wintec</p>
+                <div style="margin: 24px 0;">
+                    <a style="margin: 0 10px" href="https://www.facebook.com/pon.sujith.5"><i class="fa fa-facebook"></i></a>
+                    <a style="margin: 0 10px" href="https://www.instagram.com/badviral"><i class="fa fa-instagram"></i></a>
+                </div>
+                <button onclick="flipCard(this)">Details</button>
+            </div>
+            <div class="flip-card-back">
+                <h1>Finance</h1>
+                <p>Financial Planning and Analysis</p>
+            </div>
         </div>
-    </nav>
+    </div>
 
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="../static/images/Manav.jpg" alt="Manav" style="width:100%; object-fit: fill">
+                <h1>Manav</h1>
+                <p>Wintec</p>
+                <div style="margin: 24px 0;">
+                    <a style="margin: 0 10px" href="https://www.facebook.com/manav.arora.92372"><i class="fa fa-facebook"></i></a>
+                    <a style="margin: 0 10px" href="https://www.instagram.com/manav_1200"><i class="fa fa-instagram"></i></a>
+                </div>
+                <button onclick="flipCard(this)">Details</button>
+            </div>
+            <div class="flip-card-back">
+                <h1>Marketing</h1>
+                <p>Market Research and Advertising and Promotion</p>
+            </div>
+        </div>
+    </div>
 
-    <script>
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            var nav = document.querySelector('.topnav');
-            if (nav.style.display === "block") {
-                nav.style.display = "none";
-            } else {
-                nav.style.display = "block";
-            }
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="../static/images/Michael.jpg" alt="Michael" style="width:100%">
+                <h1>Zhida</h1>
+                <p>Wintec</p>
+                <div style="margin: 24px 0;">
+                    <a style="margin: 0 10px" href="https://www.facebook.com/profile.php?id=61556501074520"><i class="fa fa-facebook"></i></a>
+                    <a style="margin: 0 10px" href="https://www.instagram.com/michaelchen2142"><i class="fa fa-instagram"></i></a>
+                </div>
+                <button onclick="flipCard(this)">Details</button>
+            </div>
+            <div class="flip-card-back">
+                <h1>IT</h1>
+                <p>Technical Support and Technology Strategy</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function flipCard(button) {
+        var cardInner = button.closest('.flip-card').querySelector('.flip-card-inner');
+        cardInner.style.transform = 'rotateY(180deg)'; // Flip the card
+
+        // Add event listener for mouseleave to revert the flip
+        cardInner.closest('.flip-card').addEventListener('mouseleave', function() {
+            cardInner.style.transform = ''; // Revert the flip
         });
-    </script>
+    }
+</script>
 
-
-
-
-
-    <div class="image-container">
-        <img src="../static/images/About.png" alt="Contact Us">
-        <div class="text-container">
-            <div class="image-text">
-                About Us
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <h1>Our Vision</h1>
-        <p>
-            We are committed to providing unmatched virtual walking experiences through cutting-edge virtual reality technology to users around the globe.
-            Our goal is to break geographical barriers, enabling people to easily explore every corner of the world from their homes, experiencing the beauty of foreign cultures and nature.
-            Through our services, we aim to enhance global cultural exchanges and understanding, offering users a safe and convenient way to explore new worlds.
-        </p>
-        <br>
-        <br>
-        <h1>Our Advantages</h1>
-        <p>
-            <strong>Technology Advance:</strong>  Using the latest in virtual reality technology, we offer high-definition, immersive visual and auditory experiences that make users feel as though they are truly there.
-        </p>
-        <br>
-        <p>
-            <strong>Destination Choices:</strong>  We offer an extensive catalog of destinations, covering everything from world-famous cities to remote natural landscapes, meeting the exploratory needs of different users.
-        </p>
-        <br>
-        <p>
-            <strong>Ease of Access and Use:</strong>  Our platform is accessible on multiple devices, including VR headsets, smartphones, and computers, allowing users to enjoy virtual walks anytime, anywhere.
-        </p>
-    </div>
-
-    <div class="team-start">
-        <h1>Our Team</h1>
-    </div>
-
-    <div class="card-container">
-
-
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="../static/images/Thireach.jpeg" alt="Thireach" style="width:100%">
-                    <h1>Thireach</h1>
-                    <p>Wintec</p>
-                    <div style="margin: 24px 0;">
-                        <a href="https://www.facebook.com/ThireachChhun"><i class="fa fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/_thirxach_"><i class="fa fa-instagram"></i></a>
-                    </div>
-                    <button onclick="flipCard(this)">Details</button>
-                </div>
-                <div class="flip-card-back">
-                    <h1>Human Resources</h1>
-                    <p>Handle the Recruitment, Employee relations and Training.</p>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="../static/images/Sujith.jpeg" alt="Sujith" style="width:100%">
-                    <h1>Sujith</h1>
-                    <p>Wintec</p>
-                    <div style="margin: 24px 0;">
-                        <a style="margin: 0 10px" href="https://www.facebook.com/pon.sujith.5"><i class="fa fa-facebook"></i></a>
-                        <a style="margin: 0 10px" href="https://www.instagram.com/badviral"><i class="fa fa-instagram"></i></a>
-                    </div>
-                    <button onclick="flipCard(this)">Details</button>
-                </div>
-                <div class="flip-card-back">
-                    <h1>Finance</h1>
-                    <p>Financial Planning and Analysis</p>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="../static/images/Manav.jpg" alt="Manav" style="width:100%; object-fit: fill">
-                    <h1>Thireach</h1>
-                    <p>Wintec</p>
-                    <div style="margin: 24px 0;">
-                        <a style="margin: 0 10px" href="https://www.facebook.com/manav.arora.92372"><i class="fa fa-facebook"></i></a>
-                        <a style="margin: 0 10px" href="https://www.instagram.com/manav_1200"><i class="fa fa-instagram"></i></a>
-                    </div>
-                    <button onclick="flipCard(this)">Details</button>
-                </div>
-                <div class="flip-card-back">
-                    <h1>Marketing</h1>
-                    <p>Market Research and Advertising and Promotion</p>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="../static/images/Michael.jpg" alt="Michael" style="width:100%">
-                    <h1>Zhida</h1>
-                    <p>Wintec</p>
-                    <div style="margin: 24px 0;">
-                        <a style="margin: 0 10px" href="https://www.facebook.com/profile.php?id=61556501074520"><i class="fa fa-facebook"></i></a>
-                        <a style="margin: 0 10px" href="https://www.instagram.com/michaelchen2142"><i class="fa fa-instagram"></i></a>
-                    </div>
-                    <button onclick="flipCard(this)">Details</button>
-                </div>
-                <div class="flip-card-back">
-                    <h1>IT</h1>
-                    <p>Technial Support and Technology Strategy</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
-        function flipCard(button) {
-            var cardInner = button.closest('.flip-card').querySelector('.flip-card-inner');
-            cardInner.style.transform = 'rotateY(180deg)'; // Flip the card on button click
-
-            // Add event listener for mouseleave to revert the flip
-            cardInner.closest('.flip-card').addEventListener('mouseleave', function() {
-                cardInner.style.transform = ''; // Revert the flip when mouse leaves the card
-            });
-        }
-
-
-    </script>
-
-
-
-    <div class="footer">
-        <a href="https://www.youtube.com/@SerenityTrail"><img src="../static/images/YoutubeLogo.png"></a>
-        <a href="https://www.facebook.com/profile.php?id=61560889890946"><img src="../static/images/FacebookLogo.png"></a>
-        <a href="https://www.instagram.com/serenitytrail_/"><img src="../static/images/InstagramLogo.png"></a>
-    </div>
-    <div class="footer">
-        <p>Copyright&copy; 2024 Serenity Trail. All rights reserved.</p>
-    </div>
+<!-- Footer section -->
+<div class="footer">
+    <a href="https://www.youtube.com/@SerenityTrail"><img src="../static/images/YoutubeLogo.png" alt="YouTube"></a>
+    <a href="https://www.facebook.com/profile.php?id=61560889890946"><img src="../static/images/FacebookLogo.png" alt="Facebook"></a>
+    <a href="https://www.instagram.com/serenitytrail_/"><img src="../static/images/InstagramLogo.png" alt="Instagram"></a>
+</div>
+<div class="footer">
+    <p>&copy; 2024 Serenity Trail. All rights reserved.</p>
+</div>
 </body>
 </html>
-

@@ -4,18 +4,18 @@
     padding: 0;
     margin: 0;
 }
-/*Style the website's background color and scroll effect*/
+/* Website background color and scroll effect */
 html {
     scroll-behavior: smooth;
     background-color: white;
 }
-/* Default div style to isolate bidirectional text*/
+
 div {
     display: block;
     unicode-bidi: isolate;
 }
 
-
+/* Navigation bar styles */
 nav {
     display: flex;
     justify-content: space-between;
@@ -87,9 +87,7 @@ nav {
 
     .site-title {
         font-size: 20px;
-        color: #fff;
         margin-left: 10px;
-        font-family: Arial, sans-serif;
     }
 
     .topnav {
@@ -109,11 +107,7 @@ nav {
     }
 }
 
-
-
-
-
-
+/* Image container styles */
 .image-container {
     position: relative;
     width: 100vw;
@@ -148,7 +142,6 @@ nav {
     color: #ffffff;
     font-size: 8vw;
     font-weight: bold;
-    top: 70%
 }
 
 .image-text-subtitle {
@@ -157,11 +150,7 @@ nav {
     color: #d8c9aa;
 }
 
-
-
-
-
-
+/* Content section styles */
 .content {
     display: flex;
     align-items: flex-start;
@@ -229,12 +218,7 @@ nav {
     }
 }
 
-
-
-
-
-
-
+/* Overview image styles */
 .Overview-image {
     width: 100vw;
     height: 100vh;
@@ -259,11 +243,7 @@ nav {
     text-decoration: none;
 }
 
-
-
-
-
-
+/* Contact section styles */
 .contact-section {
     text-align: center;
     padding: 40px 20px;
@@ -301,47 +281,40 @@ nav {
     background-color: #cdd625;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+/* Footer styles */
 .footer {
-    overflow:hidden;
+    overflow: hidden;
     text-align: center;
     color: #f2f2f2;
     background-color: rgba(30, 32, 32, 0.95);
     display: flex;
     justify-content: center;
-    top:0;
 }
+
 .footer a {
-    float:left;
-    display:flex;
-    text-decoration:none;
-    padding:15px 40px;
+    float: left;
+    display: flex;
+    text-decoration: none;
+    padding: 15px 40px;
 }
+
 .footer a img {
     width: 30px;
     height: auto;
-    display:block;
+    display: block;
 }
+
 .footer a:hover {
     background-color: rgba(101, 107, 110, 0.7);
 }
 
 .footer p {
     color: white;
-    padding:15px 40px;
-    margin:0;
+    padding: 15px 40px;
+    margin: 0;
 }
 
+/* Back to top button styles */
 #backToTop {
     position: fixed;
     right: 20px;
@@ -355,36 +328,38 @@ nav {
     font-size: 10px;
     z-index: 1000;
 }
+
 #backToTop:hover {
     background-color: #afb4b3;
 }
 
-
+/* Colorblind mode styles */
 .colorblind-mode {
-    /* 针对色盲用户优化的颜色 */
-    filter: invert(80%); /* 可根据需求调整 */
+    filter: invert(80%);
 }
+
 #colorSwitcher {
-    position: fixed; /* 确保按钮总是固定在视口的同一位置 */
-    left: 20px; /* 距离左边20px */
-    bottom: 20px; /* 距离底部20px */
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
     padding: 10px 15px;
-    background-color: #5492af; /* 按钮背景颜色 */
-    color: white; /* 文字颜色 */
+    background-color: #5492af;
+    color: white;
     text-align: center;
     border-radius: 5px;
     text-decoration: none;
     font-size: 10px;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    z-index: 1000; /* 确保按钮在页面中的其他元素之上 */
-    transition: background-color 0.3s; /* 平滑过渡背景颜色变化 */
+    z-index: 1000;
+    transition: background-color 0.3s;
 }
+
 #colorSwitcher:hover {
     background-color: #afb4b3;
 }
-/* 保持按钮在色盲模式下可见 */
+
 .colorblind-mode #colorSwitcher {
-    filter: none; /* 不应用色盲模式的滤镜到按钮 */
-    background-color: #427487; /* 在色盲模式下改变背景色以保持可见性 */
+    filter: none;
+    background-color: #427487;
 }

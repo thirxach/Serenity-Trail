@@ -1,122 +1,107 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/trail.css">
     <title>Serenity Trail</title>
 </head>
-
 <body>
-    <a href="#top" id="backToTop">Back to top</a>
+<!-- Back to top link -->
+<a href="#top" id="backToTop">Back to top</a>
 
-    <button id="colorSwitcher" onclick="toggleColorMode()">Colorblind Mode</button>
-    <script>
-        function toggleColorMode() {
-            var body = document.body;
-            body.classList.toggle('colorblind-mode');
+<!-- Colorblind mode button -->
+<button id="colorSwitcher" onclick="toggleColorMode()">Colorblind Mode</button>
+<script>
+    function toggleColorMode() {
+        var body = document.body;
+        body.classList.toggle('colorblind-mode'); // Toggle colorblind mode
+    }
+</script>
+
+<!-- Navigation bar -->
+<nav>
+    <div class="logo-title-container">
+        <div class="logo">
+            <a href="index.html"><img src="../static/images/logo.png" alt="Logo"></a>
+        </div>
+        <div class="site-title">Serenity Trail</div>
+    </div>
+    <!-- Hamburger menu for small screens -->
+    <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+    <div class="topnav" id="myTopnav">
+        <a href="/">Home</a>
+        <a href="/trail">Trail</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+    </div>
+</nav>
+
+<script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+        var nav = document.querySelector('.topnav');
+        if (nav.style.display === "block") {
+            nav.style.display = "none"; // Hide menu
+        } else {
+            nav.style.display = "block"; // Show menu
         }
-    </script>
+    });
+</script>
 
-    <nav>
-        <div class="logo-title-container">
-            <div class="logo">
-                <a href="index.html"><img src="../static/images/logo.png" alt="Logo"></a>
-            </div>
-            <div class="site-title">Serenity Trail</div>
+<!-- Image with text overlay -->
+<div class="image-container">
+    <img src="../static/images/TrailPage.jpg" alt="Contact Us">
+    <div class="text-container">
+        <div class="image-text">
+            Let's Take A Walk
         </div>
+    </div>
+</div>
 
-        <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
-        <div class="topnav" id="myTopnav">
-            <a href="/">Home</a>
-            <a href="/trail">Trail</a>
-            <a href="/about">About Us</a>
-            <a href="/contact">Contact</a>
-        </div>
-    </nav>
-
-    <script>
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            var nav = document.querySelector('.topnav');
-            if (nav.style.display === "block") {
-                nav.style.display = "none";
-            } else {
-                nav.style.display = "block";
-            }
-        });
-    </script>
-
-
-    <div class="image-container">
-        <img src="../static/images/TrailPage.jpg" alt="Contact Us">
-        <div class="text-container">
-            <div class="image-text">
-                Let's Take A Walk
-            </div>
+<!-- Video gallery -->
+<div class="video-gallery">
+    <div id="video01" class="video-item video01">
+        <iframe src="https://www.youtube.com/embed/WyimW5G14lA?si=3cjwyQGyJpSureD5?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="video-description">
+            <h3>Hamilton Gardens</h3>
+            <p>Hamilton Gardens offers a distinctive experience with its themed gardens representing different civilizations and historical periods. It’s not just a horticultural site but also a cultural and educational venue, offering guided and audio tours to enhance visitor understanding of the garden's history and design.</p>
         </div>
     </div>
 
-
-    <div class="video-gallery">
-
-        <div id="video01" class="video-item video01">
-            <iframe src="https://www.youtube.com/embed/WyimW5G14lA?si=3cjwyQGyJpSureD5?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            <div class="video-description">
-                <h3>Hamilton Gardens</h3>
-                <p>
-                    Hamilton Gardens offers a distinctive experience with its themed gardens representing different civilizations and historical periods.
-                    It’s not just a horticultural site but also a cultural and educational venue,
-                    offering guided and audio tours to enhance visitor understanding of the garden's history and design.
-                </p>
-            </div>
-        </div>
-
-        <div id="video02" class="video-item video02">
-            <iframe src="https://www.youtube.com/embed/8f3zY4rQz3g?si=Klj-jmdk2vxZkWax?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            <div class="video-description">
-                <h3>Redwoods Forest</h3>
-                <p>
-                    Redwoods Forest or Redwood Memorial Grove is a forest of naturalized coastal redwood on the outskirts of Rotorua, New Zealand,
-                    adjacent to the Whakarewarewa thermal area. The 6 hectares (15 acres) stand of Californian redwoods is part of the larger Whakarewarewa State Forest Park,
-                    which is part of the Kaingaroa Forest area.
-                </p>
-            </div>
-        </div>
-
-        <div id="video03" class="video-item video03">
-            <iframe src="https://www.youtube.com/embed/CMLAXaYK5qg?si=3ykVqv6-tm7hgiYx?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            <div class="video-description">
-                <h3>Maunganui beach</h3>
-                <p>
-                    Mount Maunganui’s Main Beach, also known as "the Mount," has been recognized as the best beach in New Zealand by TripAdvisor and is among the top 25 beaches worldwide.
-                    Visitors enjoy its white sands and warm waters for surfing, swimming, and relaxing.
-                    It's also a popular venue for various beach and multisport events and is a favorite spot for people-watching year-round.
-                </p>
-            </div>
-        </div>
-
-        <div id="video04" class="video-item video04">
-            <iframe src="https://www.youtube.com/embed/iu3TAET3KSE?si=FvE1irU5aSus5UCl?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            <div class="video-description">
-                <h3>Lake Ngaroto</h3>
-                <p>
-                    ake Ngaroto is the largest of the Waipa peat lakes. It is located south of Hamilton city and north-west of Te Awamutu.
-                    Lake Ngaroto has poor water quality, however, a major effort has been launched by Waipa District Council to return this lake to a more natural state,
-                    surrounded by native vegetation.
-                </p>
-            </div>
+    <div id="video02" class="video-item video02">
+        <iframe src="https://www.youtube.com/embed/8f3zY4rQz3g?si=Klj-jmdk2vxZkWax?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="video-description">
+            <h3>Redwoods Forest</h3>
+            <p>Redwoods Forest or Redwood Memorial Grove is a forest of naturalized coastal redwood on the outskirts of Rotorua, New Zealand, adjacent to the Whakarewarewa thermal area. The 6 hectares (15 acres) stand of Californian redwoods is part of the larger Whakarewarewa State Forest Park, which is part of the Kaingaroa Forest area.</p>
         </div>
     </div>
 
-
-    <div class="footer">
-        <a href="https://www.youtube.com/@SerenityTrail"><img src="../static/images/YoutubeLogo.png"></a>
-        <a href="https://www.facebook.com/profile.php?id=61560889890946"><img src="../static/images/FacebookLogo.png"></a>
-        <a href="https://www.instagram.com/serenitytrail_/"><img src="../static/images/InstagramLogo.png"></a>
+    <div id="video03" class="video-item video03">
+        <iframe src="https://www.youtube.com/embed/CMLAXaYK5qg?si=3ykVqv6-tm7hgiYx?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="video-description">
+            <h3>Maunganui Beach</h3>
+            <p>Mount Maunganui’s Main Beach, also known as "the Mount," has been recognized as the best beach in New Zealand by TripAdvisor and is among the top 25 beaches worldwide. Visitors enjoy its white sands and warm waters for surfing, swimming, and relaxing. It's also a popular venue for various beach and multisport events and is a favorite spot for people-watching year-round.</p>
+        </div>
     </div>
 
-    <div class="footer">
-        <p>Copyright&copy; 2024 Serenity Trail. All rights reserved.</p>
+    <div id="video04" class="video-item video04">
+        <iframe src="https://www.youtube.com/embed/iu3TAET3KSE?si=FvE1irU5aSus5UCl?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="video-description">
+            <h3>Lake Ngaroto</h3>
+            <p>Lake Ngaroto is the largest of the Waipa peat lakes. It is located south of Hamilton city and north-west of Te Awamutu. Lake Ngaroto has poor water quality, however, a major effort has been launched by Waipa District Council to return this lake to a more natural state, surrounded by native vegetation.</p>
+        </div>
     </div>
+</div>
+
+<!-- Footer section -->
+<div class="footer">
+    <a href="https://www.youtube.com/@SerenityTrail"><img src="../static/images/YoutubeLogo.png" alt="YouTube"></a>
+    <a href="https://www.facebook.com/profile.php?id=61560889890946"><img src="../static/images/FacebookLogo.png" alt="Facebook"></a>
+    <a href="https://www.instagram.com/serenitytrail_/"><img src="../static/images/InstagramLogo.png" alt="Instagram"></a>
+</div>
+<div class="footer">
+    <p>&copy; 2024 Serenity Trail. All rights reserved.</p>
+</div>
 
 </body>
 </html>
