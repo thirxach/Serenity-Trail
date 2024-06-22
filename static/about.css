@@ -9,7 +9,7 @@ html {
     scroll-behavior: smooth;
     background-color: white;
 }
-/* Default div style to isolate bidirectional text*/
+
 div {
     display: block;
     unicode-bidi: isolate;
@@ -109,6 +109,145 @@ nav {
     }
 }
 
+.container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    flex: 1;
+    width: 90%;.
+}
+.container h1 {
+    color: #0056b3;
+    font-size: 3vw;
+}
+.container p{
+    line-height: 1.6;
+    font-size: 2vw;
+    text-align: justify;
+}
+
+.container p strong {
+    color: #c4ca3c;
+    font-weight: bold;
+}
+
+.team-start {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.team-start h1 {
+    font-size: 4vw;
+    color: rgba(15, 138, 175, 0.93);
+}
+
+
+
+
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    height: 70vh;
+}
+
+.card, .flip-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 20vw;
+    margin: 10px;
+    text-align: center;
+    overflow: hidden;
+    font-family: arial;
+}
+
+.card img, .flip-card-front img {
+    width: 100%;
+    height: 43vh;
+    object-fit: fill;
+}
+
+.card button, .flip-card-front button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card a, .flip-card-front a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+    margin: 0 10px;
+}
+
+.card button:hover, .flip-card-front button:hover, .card a:hover, .flip-card-front a:hover {
+    opacity: 0.7;
+}
+
+
+@media (max-width: 480px) {
+    .card, .flip-card {
+        width: calc(100% - 20px);
+    }
+    .card-container{
+        height: auto;
+    }
+}
+
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 65vh;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #ffffff;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    txt-align: center;
+}
+
+
+
 
 
 
@@ -116,28 +255,19 @@ nav {
 
 .image-container {
     position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.image-container img.image {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: opacity 0.3s ease-in-out;
-    opacity: 0;
-    object-fit: cover;
 }
 
-.fade-in {
-    opacity: 1;
+.image-container img {
+    width: 100%;
+    height: 70vh;
+    display: block;
+    object-fit: cover;
+    object-position: top center;
 }
 
 .text-container {
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -145,166 +275,23 @@ nav {
 }
 
 .image-text {
-    color: #ffffff;
-    font-size: 8vw;
+    color: rgb(30, 158, 104);
+    font-size: 10vw;
     font-weight: bold;
-    top: 70%
 }
 
-.image-text-subtitle {
-    font-size: 4vw;
-    margin-top: 4vh;
-    color: #d8c9aa;
-}
-
-
-
-
-
-
-.content {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    max-width: 90vw;
-    margin: 5vh auto;
-    padding: 2vh;
-    background-color: #faf6e8;
-    border-radius: 1vh;
-    box-shadow: 0 0.5vh 0.75vh rgba(0,0,0,0.1);
-}
-
-.image-box {
-    flex: 1;
-    padding-right: 5vw;
-}
-
-.image-box img {
-    width: 100%;
-    height: 100%;
-    border-radius: 0.5vh;
-}
-
-.text-box {
-    flex: 3;
-}
-
-.text-box h1, .text-box p {
-    margin: 1vh 0;
-}
-
-.text-box h1 {
-    color: #2a7ae2;
-    font-size: 3vw;
-}
-
-.text-box p {
-    font-family: Optima, sans-serif;
-    text-indent: 0;
-    font-size: 2vw;
-}
-
-/* Responsive adjustments for screens less than 680px */
-@media (max-width: 680px) {
-    .content {
-        flex-direction: column;
-        padding: 5vw;
-    }
-
-    .image-box {
-        padding-right: 0;
-        margin-bottom: 2vh;
-    }
-
-    .text-box {
-        flex: none;
-    }
-
-    .text-box h1 {
+@media (max-width: 768px) {
+    .image-text {
         font-size: 8vw;
     }
+}
 
-    .text-box p {
-        font-size: 5vw;
+@media (max-width: 480px) {
+    .image-text {
+        font-size: 10vw;
     }
+
 }
-
-
-
-
-
-
-
-.Overview-image {
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.text-overlay {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 40px;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-    display: block;
-    text-decoration: none;
-}
-
-
-
-
-
-
-.contact-section {
-    text-align: center;
-    padding: 40px 20px;
-    margin: 20px auto;
-    width: 70%;
-}
-
-.contact-section h1 {
-    color: #064e4f;
-    font-weight: bold;
-    font-size: 40px;
-    margin-bottom: 20px;
-    font-family: "Roboto Light", sans-serif;
-}
-
-.contact-section p {
-    color: #828a8a;
-    font-size: 20px;
-    margin-bottom: 20px;
-    font-family: "Roboto Thin", sans-serif;
-}
-
-.contact-section button {
-    background-color: #064e4f;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.contact-section button:hover {
-    background-color: #cdd625;
-}
-
-
-
-
-
 
 
 
@@ -318,6 +305,7 @@ nav {
     color: #f2f2f2;
     background-color: rgba(30, 32, 32, 0.95);
     display: flex;
+    position: relative;
     justify-content: center;
     top:0;
 }

@@ -420,7 +420,38 @@ button:hover {
     border-radius: 5px;
     text-decoration: none;
     font-size: 10px;
+    z-index: 1000;
 }
 #backToTop:hover {
     background-color: #afb4b3;
+}
+
+
+.colorblind-mode {
+    /* 针对色盲用户优化的颜色 */
+    filter: invert(80%); /* 可根据需求调整 */
+}
+#colorSwitcher {
+    position: fixed; /* 确保按钮总是固定在视口的同一位置 */
+    left: 20px; /* 距离左边20px */
+    bottom: 20px; /* 距离底部20px */
+    padding: 10px 15px;
+    background-color: #5492af; /* 按钮背景颜色 */
+    color: white; /* 文字颜色 */
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000; /* 确保按钮在页面中的其他元素之上 */
+    transition: background-color 0.3s; /* 平滑过渡背景颜色变化 */
+}
+#colorSwitcher:hover {
+    background-color: #afb4b3;
+}
+/* 保持按钮在色盲模式下可见 */
+.colorblind-mode #colorSwitcher {
+    filter: none; /* 不应用色盲模式的滤镜到按钮 */
+    background-color: #427487; /* 在色盲模式下改变背景色以保持可见性 */
 }

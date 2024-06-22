@@ -9,6 +9,15 @@
 <body>
     <a href="#top" id="backToTop">Back to top</a>
 
+
+    <button id="colorSwitcher" onclick="toggleColorMode()">Colorblind Mode</button>
+    <script>
+        function toggleColorMode() {
+            var body = document.body;
+            body.classList.toggle('colorblind-mode');
+        }
+    </script>
+
     <nav>
         <div class="logo-title-container">
             <div class="logo">
@@ -126,7 +135,7 @@
 
 
     <div class="footer">
-        <a href="https://www.youtube.com/watch?v=WyimW5G14lA&t=6s"><img src="../static/images/YoutubeLogo.png"></a>
+        <a href="https://www.youtube.com/@SerenityTrail"><img src="../static/images/YoutubeLogo.png"></a>
         <a href="https://www.facebook.com/profile.php?id=61560889890946"><img src="../static/images/FacebookLogo.png"></a>
         <a href="https://www.instagram.com/serenitytrail_/"><img src="../static/images/InstagramLogo.png"></a>
     </div>
